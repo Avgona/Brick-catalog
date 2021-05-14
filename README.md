@@ -7,7 +7,7 @@ Swagger: http://assignmentimmotef-env.eba-kjsg39cj.eu-north-1.elasticbeanstalk.c
 #### **Technologies that are used**:
 * Java -v8
 * Spring Boot(Spring Core, Spring MVC, Spring Data JPA)
-* MySQL, JPA, 
+* MySQL, JPA, Hibernate
 * Maven
 * Thymeleaf, HTML, CSS, Bootstrap
 * Lombok
