@@ -1,0 +1,126 @@
+POST http://localhost:5000/api/reservations
+Content-Type: application/json
+
+{
+  "id": 11,
+  "nickname": "Patryk",
+  "type_of_client": "Retail",
+  "id_of_brick": 2,
+  "amount_of_bricks": 100,
+  "amount_of_pallets": 0
+}
+
+<> 2021-05-14T063002.200.html
+
+###
+
+GET http://localhost:5000/api/bricks/1
+Accept: application/json
+
+<> 2021-05-14T053533.200.json
+
+###
+
+GET http://localhost:5000/api/bricks/1
+Content-Type: application/json
+
+<> 2021-05-14T052713.200.json
+
+###
+
+GET http://localhost:5000/api/bricks/1
+Accept: application/json
+
+<> 2021-05-14T052703.200.json
+
+###
+
+GET http://localhost:5000/api/bricks/{1}
+Accept: application/json
+
+###
+
+GET https://localhost:5000/api/bricks/{1}
+Accept: application/json
+
+###
+
+GET https://localhost:5000/api/bricks/{{id}}
+Accept: application/json
+
+###
+
+GET https://localhost:5000/api/bricks/1
+Accept: application/json
+
+###
+
+GET https://localhost:5000/api/bricks/1
+
+Accept: application/json
+
+###
+
+GET https://localhost:5000/api/bricks/{1}
+
+Accept: application/json
+
+###
+
+GET https://localhost:5000/api/bricks/{1}
+Content-Type: application/json
+
+###
+
+GET https://localhost:5000/api/bricks/{1}
+Content-Type: application/json
+
+###
+
+GET https://localhost:5000/api/bricks/1
+Content-Type: application/json
+
+###
+
+GET https://localhost:5000/api/bricks/{{id}}
+Content-Type: application/json
+
+###
+
+GET https://localhost:5000/api/bricks/{{1}}
+Content-Type: application/json
+
+###
+
+GET https://localhost:5000/api/bricks/{{1}}
+Content-Type: application/json
+
+###
+
+GET https://localhost:5000/api/bricks/{{1}}
+Content-Type: application/json
+
+###
+
+GET http://localhost:5000/api/bricks
+Content-Type: application/json
+
+<> 2021-05-14T051944.200.json
+
+###
+
+GET http://localhost:5000/api/bricks
+Authorization: Basic Vladyslav Parkhomenko
+Content-Type: application/json
+
+<> 2021-05-14T051934.200.json
+
+###
+
+GET http://localhost:5000/api/bricks
+Content-Type: application/json
+
+<> 2021-05-14T051916.200.json
+
+###
+

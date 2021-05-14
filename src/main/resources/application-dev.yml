@@ -5,3 +5,11 @@ spring:
     password: 123123qwe
 server:
   port: 5000
+
+logging:
+  level:
+    io:
+      swagger:
+        models:
+          parameters:
+            AbstractSerializableParameter: error

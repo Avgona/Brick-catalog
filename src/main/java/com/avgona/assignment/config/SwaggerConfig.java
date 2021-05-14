@@ -1,0 +1,37 @@
+package com.avgona.assignment.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.service.ApiInfo;
+import springfox.documentation.service.Contact;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.web.plugins.Docket;
+
+import java.util.Collections;
+
+@Configuration
+public class SwaggerConfig {
+
+    @Bean
+    public Docket docket(){
+        return new Docket(DocumentationType.SWAGGER_2)
+                .select()
+                .paths(PathSelectors.ant("/api/**"))
+                .apis(RequestHandlerSelectors.basePackage("com.avgona.assignment.controllers"))
+                .build()
+                .apiInfo(apiInfo());
+    }
+
+    private ApiInfo apiInfo(){
+        return new ApiInfo("Brick and Reservation API",
+                "Brick catalog",
+                "1.00",
+                "https://github.com/Avgona",
+                new Contact("Vladyslav", "https://www.linkedin.com/in/w%C5%82adys%C5%82aw-parkhomenko-139709195/", "avgona2017@yandex.com"),
+                "None licence",
+                "none",
+                Collections.emptyList());
+    }
+}
