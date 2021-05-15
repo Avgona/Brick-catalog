@@ -2,7 +2,7 @@
 Link: http://assignmentimmotef-env.eba-kjsg39cj.eu-north-1.elasticbeanstalk.com/catalog/index
 
 Swagger: http://assignmentimmotef-env.eba-kjsg39cj.eu-north-1.elasticbeanstalk.com/swagger-ui.html
-
+____________________________________________________________
 *There are posted SQL files* with all data for quick access to whole project.
 
 #### **Technologies that are used**:
