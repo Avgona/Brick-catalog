@@ -5,6 +5,8 @@ import com.avgona.assignment.repository.BrickRepository;
 import com.avgona.assignment.service.BrickService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 
 import java.util.List;
 import java.util.Optional;
@@ -19,34 +21,32 @@ public class BrickServiceImpl implements BrickService {
         this.brickRepository = brickRepository;
     }
 
+    @Transactional(readOnly = true)
     @Override
     public List<Brick> findAll() {
         return brickRepository.findAll();
     }
 
+    @Transactional(readOnly = true)
     @Override
     public Brick findById(long id) {
-        Optional<Brick> brickById = brickRepository.findById(id);
-        Brick brick;
-
-        if(brickById.isPresent())
-            brick = brickById.get();
-        else
-            throw new RuntimeException("There's no brick with the " + id + " id");
-
-        return brick;
+        return brickRepository.findById(id).orElseThrow(() ->
+                new RuntimeException("There's no brick with the " + id + " id"));
     }
 
+    @Transactional(readOnly = true)
     @Override
     public Brick findByColor(String color) {
         return brickRepository.findByColor(color);
     }
 
+    @Transactional
     @Override
     public void save(Brick brick) {
         brickRepository.save(brick);
     }
 
+    @Transactional
     @Override
     public void deleteById(long id) {
         brickRepository.deleteById(id);

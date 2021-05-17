@@ -5,6 +5,7 @@ import com.avgona.assignment.repository.ReservationRepository;
 import com.avgona.assignment.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -18,11 +19,13 @@ public class ReservationServiceImpl implements ReservationService {
         this.reservationRepository = reservationRepository;
     }
 
+    @Transactional(readOnly = true)
     @Override
     public List<Reservation> findAll() {
         return reservationRepository.findAll();
     }
 
+    @Transactional
     @Override
     public void save(Reservation reservation) {
         reservationRepository.save(reservation);
